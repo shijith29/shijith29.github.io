@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shijith29.github.io/">
 <meta property="og:title" content="Shijith Melodan | Architect, Engineering Leader, Product Builder">
-<meta property="og:description" content="19+ years designing scalable SaaS and enterprise platforms on AWS. Builder of RyDoc Shelf and Padanam PSC, AI-powered learning apps in English and Malayalam.">
+<meta property="og:description" content="19+ years designing scalable SaaS and enterprise platforms on AWS. Builder of RyDoc Shelf and Padanam PSC, AI-powered learning apps in English and Malayalam, both live on Google Play.">
 <meta property="og:image" content="https://shijith29.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -227,7 +227,7 @@ footer { padding-block: 28px; font: 400 13px var(--mono); color: var(--muted); }
     <div class="facts">
       <div class="fact"><b>19+</b><span>years building enterprise and SaaS platforms</span></div>
       <div class="fact"><b>25</b><span>engineers led at IBM India</span></div>
-      <div class="fact"><b>2</b><span>AI and offline learning apps, built solo</span></div>
+      <div class="fact"><b>2</b><span>AI and offline learning apps, built solo, both on Google Play</span></div>
     </div>
   </div>
 </header>
@@ -285,34 +285,40 @@ footer { padding-block: 28px; font: 400 13px var(--mono); color: var(--muted); }
 
       <article class="product padanam">
         <div>
-          <span class="status wip">In development</span>
+          <span class="status live">Live on Google Play</span>
           <h3>Padanam PSC <span class="ml">പഠനം</span></h3>
-          <p class="tagline">Offline exam preparation for Kerala PSC and banking exams.</p>
-          <p>A deliberately different design from RyDoc Shelf: no accounts and no backend. The full question bank lives on the phone in SQLite, so practice works anywhere, on any connection. The app's only network call is an optional check of a static manifest for new content packs.</p>
+          <p class="tagline">Offline exam practice for Kerala PSC, with exam dates and reminders.</p>
+          <p>31,000+ questions from 338 official Kerala PSC papers (2014 to 2026), turned into timed mock tests with negative marking, topic practice and short explanations. A deliberately different design from RyDoc Shelf: no accounts and no backend. The whole question bank ships inside the app as SQLite, so practice works anywhere, and new papers reach phones as over-the-air updates. A Python pipeline does the heavy lifting: it reads PSC's answer-key PDFs (including legacy Malayalam fonts and scanned papers), tags topics and writes explanations grounded on the official answer with an LLM.</p>
           <ul class="features">
-            <li>Kerala PSC and banking exam tracks</li>
-            <li>Fully offline question bank on device</li>
-            <li>Malayalam and English interface</li>
-            <li>Downloadable content packs</li>
-            <li>No sign-up, no personal data</li>
-            <li>Part of the RyDoc family</li>
+            <li>Mock tests in the real exam pattern, for 11 exam groups</li>
+            <li>Explanations for about 26,000 questions</li>
+            <li>Upcoming exam dates from PSC's exam programme</li>
+            <li>Exam reminders and a daily study streak, scheduled on the phone</li>
+            <li>Fully offline, Malayalam and English interface</li>
+            <li>No sign-up, no ads, no personal data</li>
           </ul>
+          <div class="links">
+            <a class="btn primary" href="https://play.google.com/store/apps/details?id=in.rydoc.padanam" target="_blank" rel="noopener">Get it on Google Play</a>
+            <a class="btn" href="https://rydoc.in/#padanam" target="_blank" rel="noopener">rydoc.in</a>
+          </div>
         </div>
         <div class="side">
           <div>
             <p class="label">How it's built</p>
             <div class="flow">
-              <div class="node">Android app · expo-router <em>UI</em></div>
-              <div class="edge"><span>local queries</span></div>
-              <div class="node">expo-sqlite question bank <em>on device</em></div>
-              <div class="edge"><span>optional, occasional</span></div>
-              <div class="node">manifest.json <em>static host</em></div>
+              <div class="node">Python content pipeline <em>PDFs · OCR · LLM</em></div>
+              <div class="edge"><span>build</span></div>
+              <div class="node">SQLite question bank <em>bundled</em></div>
+              <div class="edge"><span>EAS Update, over the air</span></div>
+              <div class="node">Expo Android app <em>offline</em></div>
+              <div class="edge"><span>on device</span></div>
+              <div class="node">Local reminders <em>no push server</em></div>
             </div>
           </div>
           <div>
             <p class="label">Stack</p>
             <div class="chips">
-              <span class="chip">Expo SDK 58</span><span class="chip">TypeScript</span><span class="chip">expo-router</span><span class="chip">expo-sqlite</span><span class="chip">i18next</span>
+              <span class="chip">Expo SDK 58</span><span class="chip">TypeScript</span><span class="chip">expo-router</span><span class="chip">expo-sqlite</span><span class="chip">expo-notifications</span><span class="chip">EAS Update</span><span class="chip">i18next</span><span class="chip">Python</span><span class="chip">PyMuPDF</span><span class="chip">Tesseract OCR</span><span class="chip">OpenAI API</span><span class="chip">Claude Code</span>
             </div>
           </div>
         </div>
